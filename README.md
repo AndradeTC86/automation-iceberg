@@ -8,7 +8,7 @@ Uma experiência web interativa sobre as camadas de uma estratégia de automaç�
 - Destaque automático da camada correspondente durante a rolagem.
 - Indicadores de velocidade, estabilidade e realismo para cada tipo de teste.
 - Quiz interativo com seis cenários e feedback imediato.
-- Idiomas disponíveis: português do Brasil, inglês, espanhol, francês e italiano.
+- Idiomas disponíveis: português do Brasil, inglês, espanhol, francês, italiano e alemão.
 - Tema claro/escuro conforme a preferência do sistema.
 - Layout responsivo para desktop e dispositivos móveis.
 - Suporte a `prefers-reduced-motion` e elementos com acessibilidade básica.
@@ -37,15 +37,16 @@ Também é possível usar a extensão Live Server do VS Code ou outro servidor e
 
 ```text
 .
-├── index.html   # Conteúdo, templates dos idiomas e estrutura da página
-├── script.js    # Traduções, navegação, indicadores e lógica do quiz
+├── index.html   # Estrutura da página e carregamento das traduções
+├── locales/     # Objetos de conteúdo por idioma (`pt-BR.js`, `en.js`, etc.)
+├── script.js    # Renderização do iceberg, navegação, indicadores e lógica do quiz
 ├── style.css    # Layout, temas, responsividade e estilos da experiência
 └── README.md    # Documentação do projeto
 ```
 
 ## Desenvolvimento
 
-O conteúdo de cada idioma fica em um `<template>` no [`index.html`](./index.html), enquanto os textos do quiz e os rótulos dinâmicos ficam configurados no [`script.js`](./script.js). Para alterar a aparência, edite [`style.css`](./style.css).
+O conteúdo principal de cada idioma está em arquivos separados em [`locales/`](./locales), e o [`script.js`](./script.js) renderiza a página a partir deles. A estrutura do HTML fica enxuta e mantém apenas o shell da aplicação. Para alterar a aparência, edite [`style.css`](./style.css).
 
 Ao adicionar ou remover uma camada:
 
